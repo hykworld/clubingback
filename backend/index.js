@@ -13,19 +13,31 @@ const jwt = require("jsonwebtoken"); // JWT 패키지 로드
 const server = http.createServer(app);
 
 // 미들웨어 설정
+const allowedOrigins = [
+  'http://d3566k4zhseniv.cloudfront.net', // CloudFront 도메인
+  'http://clubing.s3-website.us-east-2.amazonaws.com', // S3 웹사이트 URL
+];
+
 app.use(
   cors({
-    origin: 'http://clubing.s3-website.us-east-2.amazonaws.com',
-    credentials: true,
-    //클라이언트에서 서버로 요청을 보낼 때 쿠키와 인증 헤더를 포함할 수 있게 해주는 설정입니다.
-    //이 옵션은 클라이언트와 서버 간의 인증된 세션 유지에 중요한 역할을 합니다.
+    origin: (origin, callback) => {
+      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true, // 쿠키 및 인증 정보를 포함할 수 있도록 허용
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // 허용할 HTTP 메소드
   }),
 );
 
+// 소켓 통신 CORS 설정
 const io = socketIo(server, {
   cors: {
-    origin: 'http://clubing.s3-website.us-east-2.amazonaws.com', // 소켓 통신을 허용할 출처
-    methods: ["GET", "POST"], // 허용할 HTTP 메소드
+    origin: allowedOrigins, // 소켓 통신을 허용할 출처
+    methods: ['GET', 'POST'], // 허용할 HTTP 메소드
+    credentials: true, // 소켓 통신에 쿠키 및 인증 정보 포함
   },
 });
 
