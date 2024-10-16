@@ -338,7 +338,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-const baseURL = process.env.REACT_APP_API_URL || "http://localhost:4000";
+const baseURL = process.env.API_URL || "http://localhost:4000";
 
 router.put("/profile/image", auth, upload.single("image"), async (req, res) => {
   try {
