@@ -5,16 +5,19 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const auth = require('../middleware/auth');
 
+const apiUrl = process.env.API_URL;
+
 router.post('/login', async (req, res) => {
     const { code } = req.body;
     //console.log('Received code:', code);
     try {
         // 액세스 토큰 요청
         const response = await axios.post('https://kauth.kakao.com/oauth/token', null, {
+            
             params: {
                 grant_type: 'authorization_code',
-                client_id: process.env.REACT_APP_KAKAO_API_URL,
-                redirect_uri: 'http://localhost:3000/kakao/callback',
+                client_id: process.env.KAKAO_API_URL,
+                redirect_uri: `${apiUrl}/kakao/callback`,
                 code,
             },
             headers: {
@@ -57,12 +60,11 @@ router.post('/login', async (req, res) => {
 
         // 사용자 데이터베이스에 사용자 등록/업데이트
         const user = await User.findOne({ email: userInfo.kakao_account.email });
-
         if (!user) {
             // 사용자가 없으면 이메일 정보를 쿼리 파라미터로 포함하여 리디렉션
             console.log(`회원정보 없어서 이동 중: ${userInfo.kakao_account.email}`);
             const email = userInfo.kakao_account.email;
-            return res.status(200).json({ redirectUrl: `http://localhost:3000/snsregister?email=${email}`});
+            return res.status(200).json({ redirectUrl: `${apiUrl}/snsregister?email=${email}`});
         }
         // JWT 생성
         const payload = {

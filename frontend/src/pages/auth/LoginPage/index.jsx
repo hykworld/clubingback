@@ -143,8 +143,9 @@ const LoginPage = () => {
 
 // 로그인 버튼 클릭 시
 const kakaoLogin = () => {
+  const apiUrl = process.env.REACT_APP_API_URL;
   const clientId = process.env.REACT_APP_KAKAO_API_URL;
-  const redirectUri = 'http://localhost:3000/kakao/callback';
+  const redirectUri = `${apiUrl}/kakao/callback`;
   const authUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`;
 
   window.location.href = authUrl;
