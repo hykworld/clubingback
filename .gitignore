@@ -8,7 +8,9 @@ frontend/build/
 
 # Environment variables
 backend/.env
+backend/.env.production
 frontend/.env
+frontend/.env.production
 
 # Logs
 backend/logs/
