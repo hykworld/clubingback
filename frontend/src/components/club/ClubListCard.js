@@ -9,11 +9,20 @@ import ModeNightIcon from "@mui/icons-material/ModeNight";
 import { useNavigate } from "react-router-dom";
 
 const ClubListCard = ({ clubList }) => {
+<<<<<<< HEAD
   const navigate = useNavigate();
   // clubList가 undefined인 경우를 처리
   if (!clubList || clubList.length === 0) {
     return <div>No clubs available</div>;
   }
+=======
+  
+  const navigate = useNavigate();
+    // clubList가 undefined인 경우를 처리
+    if (!clubList || clubList.length === 0) {
+      return <div>No clubs available</div>;
+    }
+>>>>>>> 1e99f21 (테스트)
   return (
     <>
       {clubList.map((club) => (
@@ -43,7 +52,11 @@ const ClubListCard = ({ clubList }) => {
               }}
             >
               <img
+<<<<<<< HEAD
                 src={`http://localhost:4000/` + club.img}
+=======
+                src={`http://3.133.122.248:4000/` + club.img}
+>>>>>>> 1e99f21 (테스트)
                 alt={club.title}
                 style={{
                   width: "100%",
@@ -287,4 +300,8 @@ const ClubListCard = ({ clubList }) => {
   );
 };
 
+<<<<<<< HEAD
 export default ClubListCard;
+=======
+export default ClubListCard;
+>>>>>>> 1e99f21 (테스트)

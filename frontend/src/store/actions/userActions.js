@@ -2,14 +2,20 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axiosInstance from "../../utils/axios";
 import { setFavoriteList } from '../reducers/wishSlice';
 import { fetchMessages } from "./myMessageActions"; // 메시지 가져오기 액션
+<<<<<<< HEAD
 import axios from "axios";
+=======
+>>>>>>> 1e99f21 (테스트)
 // Redux Toolkit에서 createAsyncThunk를 가져옴
 
 // 비동기 회원가입 액션 생성
 export const registerUser = createAsyncThunk(
   "user/registerUser", // 액션 타입: "user/registerUser"
   async (body, thunkAPI) => {
+<<<<<<< HEAD
     console.log("회원가입 데이터:", body); // 요청 데이터 확인
+=======
+>>>>>>> 1e99f21 (테스트)
     try {
       const response = await axiosInstance.post(
         `/users/register`, // 회원가입 API 엔드포인트
@@ -94,6 +100,7 @@ export const updateUser = createAsyncThunk(
       return thunkAPI.rejectWithValue(error.response.data);
     }
   }
+<<<<<<< HEAD
 );
 
 export const kakaoLoginUser = createAsyncThunk(
@@ -117,4 +124,6 @@ export const kakaoLoginUser = createAsyncThunk(
       return thunkAPI.rejectWithValue(error.response.data || error.message);
     }
   }
+=======
+>>>>>>> 1e99f21 (테스트)
 );

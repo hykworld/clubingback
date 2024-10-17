@@ -64,6 +64,7 @@ const InterestSearch = ({ setInterestSido, setInterestSigoon, setInterestDong })
     }
   };
 
+<<<<<<< HEAD
   const handleChange = (e) => {
     const inputValue = e.target.value;
     const parts = inputValue.split(' ').filter(Boolean); // 공백만 있는 경우 제거
@@ -86,6 +87,8 @@ const InterestSearch = ({ setInterestSido, setInterestSigoon, setInterestDong })
     setValue('interestSearchTerm', inputValue, { shouldValidate: true }); // 입력된 값을 검색 필드에 반영
 };
 
+=======
+>>>>>>> 1e99f21 (테스트)
   const StyledListItem = styled(ListItem)(({ theme }) => ({
     '&:hover': {
       backgroundColor: theme.palette.action.hover,
@@ -109,7 +112,13 @@ return (
           }
         })}
         onKeyDown={handleInterestKeyDown} 
+<<<<<<< HEAD
         onChange={handleChange}
+=======
+        onChange={(e) => {
+          setValue('interestSearchTerm', e.target.value, { shouldValidate: true }); // 변경된 값을 즉시 검증하도록 설정합니다
+        }}
+>>>>>>> 1e99f21 (테스트)
         placeholder='*읍면동 중 하나 입력해주세요 예) 강화읍'
         sx={{
           bgcolor: 'white',

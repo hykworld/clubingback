@@ -42,7 +42,11 @@ const ReadVote = ({ voteId, onDelete }) => {
   useEffect(() => {
     const fetchVote = async () => {
       try {
+<<<<<<< HEAD
         const response = await axios.get(`http://localhost:4000/clubs/boards/votes/${id}`);
+=======
+        const response = await axios.get(`http://3.133.122.248:4000/clubs/boards/votes/${id}`);
+>>>>>>> 1e99f21 (테스트)
         setVote(response.data);
 
         // Determine if the vote has ended
@@ -50,7 +54,11 @@ const ReadVote = ({ voteId, onDelete }) => {
         const endTime = new Date(response.data.endTime);
         setIsVoteEnded(currentTime > endTime);
 
+<<<<<<< HEAD
         const summaryResponse = await axios.get(`http://localhost:4000/clubs/boards/votes/${id}/summary`);
+=======
+        const summaryResponse = await axios.get(`http://3.133.122.248:4000/clubs/boards/votes/${id}/summary`);
+>>>>>>> 1e99f21 (테스트)
         setSummary(summaryResponse.data);
 
         const userHasVoted = response.data.votes.some((vote) => vote.emails.includes(email));
@@ -70,7 +78,11 @@ const ReadVote = ({ voteId, onDelete }) => {
 
   const { mutate: deleteVote } = useMutation({
     mutationFn: async () => {
+<<<<<<< HEAD
       await axios.delete(`http://localhost:4000/clubs/boards/votes/${id}`);
+=======
+      await axios.delete(`http://3.133.122.248:4000/clubs/boards/votes/${id}`);
+>>>>>>> 1e99f21 (테스트)
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["posts"]);
@@ -92,7 +104,11 @@ const ReadVote = ({ voteId, onDelete }) => {
   const handleVote = async () => {
     if (selectedOption && !hasVoted) {
       try {
+<<<<<<< HEAD
         await axios.post(`http://localhost:4000/clubs/boards/votes/${id}/vote`, { option: selectedOption, email });
+=======
+        await axios.post(`http://3.133.122.248:4000/clubs/boards/votes/${id}/vote`, { option: selectedOption, email });
+>>>>>>> 1e99f21 (테스트)
         setHasVoted(true);
         setVotedOptions([...votedOptions, selectedOption]);
 
@@ -112,7 +128,11 @@ const ReadVote = ({ voteId, onDelete }) => {
 
   const handleSummaryOpen = async () => {
     try {
+<<<<<<< HEAD
       const response = await axios.get(`http://localhost:4000/clubs/boards/votes/${id}/summary`);
+=======
+      const response = await axios.get(`http://3.133.122.248:4000/clubs/boards/votes/${id}/summary`);
+>>>>>>> 1e99f21 (테스트)
       setSummary(response.data);
       setOpenSummary(true);
     } catch (error) {
@@ -127,7 +147,11 @@ const ReadVote = ({ voteId, onDelete }) => {
   const handleRemoveVote = async () => {
     if (selectedOption && hasVoted) {
       try {
+<<<<<<< HEAD
         await axios.put(`http://localhost:4000/clubs/boards/votes/${id}`, {
+=======
+        await axios.put(`http://3.133.122.248:4000/clubs/boards/votes/${id}`, {
+>>>>>>> 1e99f21 (테스트)
           option: selectedOption,
           email,
         });
@@ -136,7 +160,11 @@ const ReadVote = ({ voteId, onDelete }) => {
         setSelectedOption(null);
         setVotedOptions(votedOptions.filter((option) => option !== selectedOption));
 
+<<<<<<< HEAD
         const updatedSummaryResponse = await axios.get(`http://localhost:4000/clubs/boards/votes/${id}/summary`);
+=======
+        const updatedSummaryResponse = await axios.get(`http://3.133.122.248:4000/clubs/boards/votes/${id}/summary`);
+>>>>>>> 1e99f21 (테스트)
         setSummary(updatedSummaryResponse.data);
       } catch (error) {
         console.error("투표 취소 중 오류 발생:", error);

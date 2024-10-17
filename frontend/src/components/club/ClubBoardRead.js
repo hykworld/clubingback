@@ -80,7 +80,11 @@ export default function CKEditor5Editor({ onChange, content, setImage, readOnly 
   const [editorInstance, setEditorInstance] = useState(null);
   const [isLayoutReady, setIsLayoutReady] = useState(false);
   // 서버에서 받은 데이터를 기준으로 이미지 링크를 생성할 수 있도록 수정합니다.
+<<<<<<< HEAD
   const imgLink = "http://localhost:4000/upload";
+=======
+  const imgLink = "http://3.133.122.248:4000/upload";
+>>>>>>> 1e99f21 (테스트)
 
   const customUploadAdapter = (loader) => {
     return {
@@ -90,7 +94,11 @@ export default function CKEditor5Editor({ onChange, content, setImage, readOnly 
           loader.file.then((file) => {
             data.append("file", file);
             axios
+<<<<<<< HEAD
               .post("http://localhost:4000/clubs/boards/upload", data)
+=======
+              .post("http://3.133.122.248:4000/clubs/boards/upload", data)
+>>>>>>> 1e99f21 (테스트)
               .then((res) => {
                 setImage(res.data.filename); // 업로드된 이미지의 파일명 저장
                 const dateFolder = getFormattedDate(); // getFormattedDate() 함수가 필요합니다.

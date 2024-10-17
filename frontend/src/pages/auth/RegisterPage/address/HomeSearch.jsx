@@ -59,6 +59,7 @@ const HomeSearch = ({ setSelectedSido, setSelectedSigoon, setSelectedDong }) => 
       e.preventDefault();
       if (results.length > 0) {
         handleSelect(results[0]);
+<<<<<<< HEAD
       } 
     }
   };
@@ -85,6 +86,12 @@ const HomeSearch = ({ setSelectedSido, setSelectedSigoon, setSelectedDong }) => 
     setValue('searchTerm', inputValue, { shouldValidate: true }); // 입력된 값을 검색 필드에 반영
 };
 
+=======
+      }
+    }
+  };
+
+>>>>>>> 1e99f21 (테스트)
   const StyledListItem = styled(ListItem)(({ theme }) => ({
     '&:hover': {
       backgroundColor: theme.palette.action.hover,
@@ -107,7 +114,13 @@ const HomeSearch = ({ setSelectedSido, setSelectedSigoon, setSelectedDong }) => 
           }
         })}
         onKeyDown={handleKeyDown} // Enter 키 처리
+<<<<<<< HEAD
         onChange={handleChange}
+=======
+        onChange={(e) => {
+          setValue('searchTerm', e.target.value, { shouldValidate: true }); // 변경된 값을 즉시 검증하도록 설정합니다
+        }}
+>>>>>>> 1e99f21 (테스트)
         placeholder="*읍면동 중 하나 입력해주세요 예) 상도동"
         sx={{
           bgcolor: 'white',

@@ -13,7 +13,10 @@ import '../../../App.css';
 import '../../../assets/styles/LoginCss.css';
 import CustomButton2 from '../../../components/club/CustomButton2.jsx'
 import CustomCheckbox from '../../../components/club/CustomCheckbox.jsx'
+<<<<<<< HEAD
 import axios from 'axios';
+=======
+>>>>>>> 1e99f21 (테스트)
 
 const LoginPage = () => {
   const {
@@ -138,6 +141,7 @@ const LoginPage = () => {
       boxShadow: "0 0 0 2px rgba(0, 0, 0, 0.2)", // 포커스 시 그림자 효과
     },
   }));
+<<<<<<< HEAD
   
 //카카오 로그인
 
@@ -151,6 +155,9 @@ const kakaoLogin = () => {
   window.location.href = authUrl;
   //window.open(authUrl, 'kakaoLogin', 'width=600,height=700');
 };
+=======
+
+>>>>>>> 1e99f21 (테스트)
   return (
     <Container
       sx={{
@@ -321,6 +328,7 @@ const kakaoLogin = () => {
             <a href="/register">회원가입</a>
           </Typography>
         </form>
+<<<<<<< HEAD
         <Box 
          sx={{
           mt: 2,
@@ -332,6 +340,9 @@ const kakaoLogin = () => {
       </Box>
       </Box>
     
+=======
+      </Box>
+>>>>>>> 1e99f21 (테스트)
       <Box
         display="flex"
         justifyContent="center"

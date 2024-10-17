@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .tui-image-editor-header-buttons {
   display: none;
 }
@@ -8,3 +9,15 @@
   visibility: hidden;
 }
 
+=======
+.tui-image-editor-header-buttons {
+  display: none;
+}
+.tui-image-editor-help-menu {
+  display: none;
+}
+.react-sortable-hoc-placeholder {
+  visibility: hidden;
+}
+
+>>>>>>> 1e99f21 (테스트)

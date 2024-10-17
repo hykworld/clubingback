@@ -40,7 +40,11 @@ const Board = () => {
   useEffect(() => {
     const checkMembership = async () => {
       try {
+<<<<<<< HEAD
         const response = await axiosInstance.get("http://localhost:4000/clubs/boards/membership", {
+=======
+        const response = await axiosInstance.get("http://3.133.122.248:4000/clubs/boards/membership", {
+>>>>>>> 1e99f21 (테스트)
           params: { clubNumber, email: author },
         });
         setIsMember(response.data.isMember);
@@ -76,7 +80,11 @@ const Board = () => {
       return;
     }
     try {
+<<<<<<< HEAD
       await axiosInstance.post("http://localhost:4000/clubs/boards/posts", {
+=======
+      await axiosInstance.post("http://3.133.122.248:4000/clubs/boards/posts", {
+>>>>>>> 1e99f21 (테스트)
         clubNumber,
         create_at: getCurrentDate(),
         author,
@@ -113,7 +121,11 @@ const Board = () => {
       return;
     }
     try {
+<<<<<<< HEAD
       await axiosInstance.post("http://localhost:4000/clubs/boards/votes", {
+=======
+      await axiosInstance.post("http://3.133.122.248:4000/clubs/boards/votes", {
+>>>>>>> 1e99f21 (테스트)
         clubNumber,
         create_at: getCurrentDate(),
         author,

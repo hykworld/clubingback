@@ -33,7 +33,11 @@ function Header() {
 
   const handleDelete = async () => {
     try {
+<<<<<<< HEAD
       await axiosInstance.delete(`http://localhost:4000/clubs/delete/${clubNumber}`);
+=======
+      await axiosInstance.delete(`http://3.133.122.248:4000/clubs/delete/${clubNumber}`);
+>>>>>>> 1e99f21 (테스트)
       // 삭제 후 원하는 페이지로 이동
       navigate("/clublist");
       alert("삭제 완료");
@@ -57,7 +61,11 @@ function Header() {
       navigate("/login");
     } else {
       axiosInstance
+<<<<<<< HEAD
         .post(`http://localhost:4000/clubs/cencellMember/${clubNumber}`)
+=======
+        .post(`http://3.133.122.248:4000/clubs/cencellMember/${clubNumber}`)
+>>>>>>> 1e99f21 (테스트)
         .then((response) => {
           alert("모임 탈퇴 성공");
           navigate(`/mypage`);

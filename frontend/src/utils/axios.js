@@ -2,10 +2,16 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 // 환경 변수 설정을 수정합니다.
+<<<<<<< HEAD
 const apiUrl = process.env.REACT_APP_API_URL;
 const isProduction = process.env.NODE_ENV === "production";
 const axiosInstance = axios.create({
   baseURL: isProduction ? "" : `${apiUrl}`,
+=======
+const isProduction = process.env.NODE_ENV === "production";
+const axiosInstance = axios.create({
+  baseURL: isProduction ? "https://d3566k4zhseniv.cloudfront.net" : "http://3.133.122.248:4000",
+>>>>>>> 1e99f21 (테스트)
   withCredentials: true, // 모든 요청에 쿠키와 자격 증명을 포함
 });
 

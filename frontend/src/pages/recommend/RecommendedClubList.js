@@ -7,7 +7,11 @@ import axios from "axios";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 const fetchClubs = async ({ pageParam = 1, email }) => {
+<<<<<<< HEAD
   const response = await axios.get(`http://localhost:4000/clubs/recommend/scroll/${pageParam}`, {
+=======
+  const response = await axios.get(`http://3.133.122.248:4000/clubs/recommend/scroll/${pageParam}`, {
+>>>>>>> 1e99f21 (테스트)
     params: { email },
   });
   return response.data;

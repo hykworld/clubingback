@@ -50,17 +50,29 @@ const imageVariants = {
 
 // API 부분
 const fetchCardData = async () => {
+<<<<<<< HEAD
   const response = await axios.get(`http://localhost:4000/clubs/home/card`);
+=======
+  const response = await axios.get(`http://3.133.122.248:4000/clubs/home/card`);
+>>>>>>> 1e99f21 (테스트)
   return response.data;
 };
 
 const fetchNewClubsData = async () => {
+<<<<<<< HEAD
   const response = await axios.get(`http://localhost:4000/clubs/home/card/new`);
+=======
+  const response = await axios.get(`http://3.133.122.248:4000/clubs/home/card/new`);
+>>>>>>> 1e99f21 (테스트)
   return response.data;
 };
 
 const fetchRecommendedClubs = async (email) => {
+<<<<<<< HEAD
   const response = await axios.get(`http://localhost:4000/home/recommend`, {
+=======
+  const response = await axios.get(`http://3.133.122.248:4000/home/recommend`, {
+>>>>>>> 1e99f21 (테스트)
     params: { email },
   });
   return response.data;

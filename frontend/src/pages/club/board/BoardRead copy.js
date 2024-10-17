@@ -42,7 +42,11 @@ const Read = ({ postId, onClose }) => {
   }, [post, author]);
 
   const deleteMutation = useMutation({
+<<<<<<< HEAD
     mutationFn: () => axios.delete(`http://localhost:4000/clubs/boards/posts/${postId}`),
+=======
+    mutationFn: () => axios.delete(`http://3.133.122.248:4000/clubs/boards/posts/${postId}`),
+>>>>>>> 1e99f21 (테스트)
     onSuccess: () => {
       queryClient.invalidateQueries(["posts"]);
       onClose();
@@ -54,7 +58,11 @@ const Read = ({ postId, onClose }) => {
 
   const updateMutation = useMutation({
     mutationFn: () =>
+<<<<<<< HEAD
       axios.put(`http://localhost:4000/clubs/boards/posts/${postId}`, {
+=======
+      axios.put(`http://3.133.122.248:4000/clubs/boards/posts/${postId}`, {
+>>>>>>> 1e99f21 (테스트)
         title,
         category,
         content,

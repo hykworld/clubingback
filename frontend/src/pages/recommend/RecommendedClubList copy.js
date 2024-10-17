@@ -35,7 +35,11 @@ const Clubs = () => {
 
   const getClubList = async () => {
     if (!category) {
+<<<<<<< HEAD
       const response = await fetch(`http://localhost:4000/clubs?searchRegion=${searchRegion}`);
+=======
+      const response = await fetch(`http://3.133.122.248:4000/clubs?searchRegion=${searchRegion}`);
+>>>>>>> 1e99f21 (테스트)
       const data = await response.json();
       console.log(`data`);
       console.log(data);
@@ -45,7 +49,11 @@ const Clubs = () => {
       }
       return data;
     } else if (category) {
+<<<<<<< HEAD
       const response = await fetch(`http://localhost:4000/clubs/${category}?searchRegion=${searchRegion}`);
+=======
+      const response = await fetch(`http://3.133.122.248:4000/clubs/${category}?searchRegion=${searchRegion}`);
+>>>>>>> 1e99f21 (테스트)
       const data = await response.json();
       if (!data || data.length < 6) {
         window.removeEventListener("scroll", handleScroll);
@@ -71,9 +79,15 @@ const Clubs = () => {
   const getClubListScroll = async (newScrollCount) => {
     let response;
     if (!category) {
+<<<<<<< HEAD
       response = await fetch(`http://localhost:4000/clubs/scroll/${newScrollCount}?searchRegion=${searchRegion}`);
     } else {
       response = await fetch(`http://localhost:4000/clubs/scroll/${newScrollCount}/${category}?searchRegion=${searchRegion}`);
+=======
+      response = await fetch(`http://3.133.122.248:4000/clubs/scroll/${newScrollCount}?searchRegion=${searchRegion}`);
+    } else {
+      response = await fetch(`http://3.133.122.248:4000/clubs/scroll/${newScrollCount}/${category}?searchRegion=${searchRegion}`);
+>>>>>>> 1e99f21 (테스트)
     }
     const data = await response.json();
     setScrollData((prevData) => [...prevData, ...data]); // Merge previous and new data
@@ -197,7 +211,11 @@ const Clubs = () => {
                     }}
                   >
                     <img
+<<<<<<< HEAD
                       src={`http://localhost:4000/` + club.img}
+=======
+                      src={`http://3.133.122.248:4000/` + club.img}
+>>>>>>> 1e99f21 (테스트)
                       alt={club.title}
                       style={{
                         width: "100%",

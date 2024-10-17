@@ -30,6 +30,10 @@ const StyledSnackbarContent = styled(SnackbarContent)(({ theme }) => ({
   backgroundColor: "white", // 배경을 하얀색으로 설정
   color: "#A6836F", // 텍스트 색상 설정
   borderRadius: "4px", // 테두리 둥글게 설정 (선택사항)
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 1e99f21 (테스트)
 }));
 const Clubs = () => {
   let [category, setCategory] = useState("");
@@ -55,14 +59,22 @@ const Clubs = () => {
 
   const getClubList = async () => {
     if (!category) {
+<<<<<<< HEAD
       const response = await fetch(`http://localhost:4000/clubs?searchRegion=${searchRegion}`);
+=======
+      const response = await fetch(`http://3.133.122.248:4000/clubs?searchRegion=${searchRegion}`);
+>>>>>>> 1e99f21 (테스트)
       const data = await response.json();
       if (!data || data.length < 6) {
         window.removeEventListener("scroll", handleScroll);
       }
       return data;
     } else if (category) {
+<<<<<<< HEAD
       const response = await fetch(`http://localhost:4000/clubs/${category}?searchRegion=${searchRegion}`);
+=======
+      const response = await fetch(`http://3.133.122.248:4000/clubs/${category}?searchRegion=${searchRegion}`);
+>>>>>>> 1e99f21 (테스트)
       const data = await response.json();
       if (!data || data.length < 6) {
         window.removeEventListener("scroll", handleScroll);
@@ -90,9 +102,15 @@ const Clubs = () => {
   const getClubListScroll = async (newScrollCount) => {
     let response;
     if (!category) {
+<<<<<<< HEAD
       response = await fetch(`http://localhost:4000/clubs/scroll/${newScrollCount}?searchRegion=${searchRegion}`);
     } else {
       response = await fetch(`http://localhost:4000/clubs/scroll/${newScrollCount}/${category}?searchRegion=${searchRegion}`);
+=======
+      response = await fetch(`http://3.133.122.248:4000/clubs/scroll/${newScrollCount}?searchRegion=${searchRegion}`);
+    } else {
+      response = await fetch(`http://3.133.122.248:4000/clubs/scroll/${newScrollCount}/${category}?searchRegion=${searchRegion}`);
+>>>>>>> 1e99f21 (테스트)
     }
     const data = await response.json();
     setScrollData((prevData) => [...prevData, ...data]); // Merge previous and new data

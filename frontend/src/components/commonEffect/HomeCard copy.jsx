@@ -10,8 +10,13 @@ const HomeCard = ({ club }) => {
 
   const { adminImage, memberImages, title, subTitle, img } = club;
 
+<<<<<<< HEAD
   // 이미지 경로에 http://localhost:4000을 붙여줌
   const fullImageUrl = img ? `http://localhost:4000/${img}` : "https://via.placeholder.com/320x150";
+=======
+  // 이미지 경로에 http://3.133.122.248:4000을 붙여줌
+  const fullImageUrl = img ? `http://3.133.122.248:4000/${img}` : "https://via.placeholder.com/320x150";
+>>>>>>> 1e99f21 (테스트)
 
   return (
     <Card variant="outlined" sx={{ width: 320, height: 240, borderRadius: 2, borderColor: "#d0d7de", margin: 1 }}>

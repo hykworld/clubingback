@@ -49,7 +49,11 @@ const imageVariants = {
 };
 
 const fetchCardData = async () => {
+<<<<<<< HEAD
   const response = await axios.get(`http://localhost:4000/clubs/card`);
+=======
+  const response = await axios.get(`http://3.133.122.248:4000/clubs/card`);
+>>>>>>> 1e99f21 (테스트)
   return response.data;
 };
 

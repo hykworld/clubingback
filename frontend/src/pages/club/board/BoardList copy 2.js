@@ -18,7 +18,11 @@ const categoryStyles = {
 
 // API에서 게시물을 가져오는 함수
 const fetchPosts = async (clubNumber) => {
+<<<<<<< HEAD
   const response = await axios.get(`http://localhost:4000/clubs/boards/all?clubNumber=${clubNumber}`);
+=======
+  const response = await axios.get(`http://3.133.122.248:4000/clubs/boards/all?clubNumber=${clubNumber}`);
+>>>>>>> 1e99f21 (테스트)
   return response.data;
 };
 

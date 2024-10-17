@@ -17,7 +17,11 @@ const ClubsList = () => {
   // 클럽 목록을 가져오는 함수
   const fetchClubs = async () => {
     try {
+<<<<<<< HEAD
       const response = await axios.get("http://localhost:4000/clubs"); // 클럽 데이터를 가져오는 API
+=======
+      const response = await axios.get("http://3.133.122.248:4000/clubs"); // 클럽 데이터를 가져오는 API
+>>>>>>> 1e99f21 (테스트)
       return response.data;
     } catch (error) {
       console.error("Error fetching clubs:", error);
@@ -71,7 +75,11 @@ const ClubsList = () => {
   //   };
 
   //   // API 호출
+<<<<<<< HEAD
   //   const response = await axios.get(`http://localhost:4000/clubs/recommend/scroll/${pageParam}`, {
+=======
+  //   const response = await axios.get(`http://3.133.122.248:4000/clubs/recommend/scroll/${pageParam}`, {
+>>>>>>> 1e99f21 (테스트)
   //     params: {
   //       userId: user.id // 서버에서 유저 정보를 가져오기 위해 userId를 전달
   //     }
@@ -89,9 +97,15 @@ const ClubsList = () => {
   // const fetchClubs = async ({ pageParam = 1 }) => {
   //   let response;
   //   if (!category) {
+<<<<<<< HEAD
   //     response = await fetch(`http://localhost:4000/clubs/recommend/scroll/${pageParam}?searchRegion=${searchRegion}`);
   //   } else {
   //     response = await fetch(`http://localhost:4000/clubs/recommend/scroll/${pageParam}/${category}?searchRegion=${searchRegion}`);
+=======
+  //     response = await fetch(`http://3.133.122.248:4000/clubs/recommend/scroll/${pageParam}?searchRegion=${searchRegion}`);
+  //   } else {
+  //     response = await fetch(`http://3.133.122.248:4000/clubs/recommend/scroll/${pageParam}/${category}?searchRegion=${searchRegion}`);
+>>>>>>> 1e99f21 (테스트)
   //   }
   //   const data = await response.json();
   //   return data;
@@ -292,7 +306,11 @@ const ClubsList = () => {
                   }}
                 >
                   <img
+<<<<<<< HEAD
                     src={`http://localhost:4000/${club.img}`}
+=======
+                    src={`http://3.133.122.248:4000/${club.img}`}
+>>>>>>> 1e99f21 (테스트)
                     alt={club.title}
                     style={{
                       width: "100%",

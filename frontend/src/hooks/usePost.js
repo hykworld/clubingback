@@ -6,7 +6,11 @@ import axios from "axios";
 
 // Fetch a single post by ID
 const fetchPost = async (postId) => {
+<<<<<<< HEAD
   const response = await axios.get(`http://localhost:4000/clubs/boards/posts/${postId}`);
+=======
+  const response = await axios.get(`http://3.133.122.248:4000/clubs/boards/posts/${postId}`);
+>>>>>>> 1e99f21 (테스트)
   return response.data;
 };
 
@@ -21,7 +25,11 @@ export const usePost = (postId) => {
 
 // Fetch all votes
 // const fetchVotes = async () => {
+<<<<<<< HEAD
 //   const { data } = await axios.get('http://localhost:4000/api/votes');
+=======
+//   const { data } = await axios.get('http://3.133.122.248:4000/api/votes');
+>>>>>>> 1e99f21 (테스트)
 //   return data;
 // };
 
@@ -35,7 +43,11 @@ export const usePost = (postId) => {
 
 // // Fetch a specific vote by ID
 // const fetchVoteById = async (voteId) => {
+<<<<<<< HEAD
 //   const { data } = await axios.get(`http://localhost:4000/api/votes/${voteId}`);
+=======
+//   const { data } = await axios.get(`http://3.133.122.248:4000/api/votes/${voteId}`);
+>>>>>>> 1e99f21 (테스트)
 //   return data;
 // };
 
@@ -50,7 +62,11 @@ export const usePost = (postId) => {
 
 // // Delete a vote
 // const deleteVote = async (voteId) => {
+<<<<<<< HEAD
 //   await axios.delete(`http://localhost:4000/api/votes/${voteId}`);
+=======
+//   await axios.delete(`http://3.133.122.248:4000/api/votes/${voteId}`);
+>>>>>>> 1e99f21 (테스트)
 // };
 
 // // Custom hook to delete a vote and invalidate the votes query

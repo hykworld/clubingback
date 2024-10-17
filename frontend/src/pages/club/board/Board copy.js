@@ -50,7 +50,11 @@ const Board = () => {
       return;
     }
     try {
+<<<<<<< HEAD
       await axiosInstance.post("http://localhost:4000/clubs/boards/posts", {
+=======
+      await axiosInstance.post("http://3.133.122.248:4000/clubs/boards/posts", {
+>>>>>>> 1e99f21 (테스트)
         clubNumber,
         create_at: getCurrentDate(),
         author,
@@ -88,7 +92,11 @@ const Board = () => {
       return;
     }
     try {
+<<<<<<< HEAD
       await axiosInstance.post("http://localhost:4000/clubs/boards/votes", {
+=======
+      await axiosInstance.post("http://3.133.122.248:4000/clubs/boards/votes", {
+>>>>>>> 1e99f21 (테스트)
         clubNumber,
         create_at: getCurrentDate(),
         author,
