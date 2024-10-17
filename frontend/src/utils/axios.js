@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 const apiUrl = process.env.REACT_APP_API_URL;
 const isProduction = process.env.NODE_ENV === "production";
 const axiosInstance = axios.create({
-  baseURL: isProduction ? "" : `${apiUrl}`,
+  baseURL: isProduction ? 'https://www.clubing.co.kr' : `${apiUrl}`,
   withCredentials: true, // 모든 요청에 쿠키와 자격 증명을 포함
 });
 
