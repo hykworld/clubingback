@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production nodemon src/index.js",
+    "start": "set NODE_ENV=production nodemon src/index.js",
     "dev": "set NODE_ENV=development && nodemon src/index.js",
     "prettier:check": "prettier --check '**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
     "prettier:fix": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
