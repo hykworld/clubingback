@@ -12,39 +12,37 @@ const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
 const server = http.createServer(app);
 // 환경 설정 확인 로그 추가
-console.log("NODE_ENV:", process.env.NODE_ENV);
+console.log("NODE_ENV index:", process.env.NODE_ENV);
 console.log("MONGO_URI:", process.env.MONGO_URI);
 // allowedOrigins를 전역에서 사용하도록 선언
-const allowedOrigins = ["https://clubing.co.kr", "https://www.clubing.co.kr"];
+const allowedOrigins = ["https://clubing.co.kr", "http://localhost:4000"];
 
 if (process.env.NODE_ENV === "development") {
   allowedOrigins.push("http://localhost:3000");  // 프론트엔드 도메인 추가
-  allowedOrigins.push("http://localhost:4000");  // 백엔드 포트
-  allowedOrigins.push("http://127.0.0.1:27017");  // 로컬 MongoDB 포트
+  allowedOrigins.push("http://localhost:4000");  // 백엔드 도메인
+  allowedOrigins.push("http://127.0.0.1:27017");  // MongoDB 포트
 }
 
-// CORS 설정
 const corsOptions = {
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
+      callback(null, true);  // 허용된 도메인에서 요청이 오면 허용
     } else {
-      console.log(`Blocked by CORS: ${origin}`);  // 차단된 도메인 로그
+      console.log(`Blocked by CORS: ${origin}`);
       callback(new Error("Not allowed by CORS"));
     }
   },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],  // 허용할 HTTP 메서드
   credentials: true,  // 쿠키와 인증 정보 허용
-  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],  // 허용할 헤더 확장 가능
-  preflightContinue: false,  // 프리플라이트 요청 후 본 요청으로 이어질지 여부
+  allowedHeaders: ["Content-Type", "Authorization"],  // 허용할 헤더
   optionsSuccessStatus: 204,  // 프리플라이트 요청의 성공 상태 코드
 };
 
 // CORS 미들웨어 적용
 app.use(cors(corsOptions));
 
-// 프리플라이트 요청 처리 (OPTIONS 메서드)
-app.options('*', cors(corsOptions));
+// 프리플라이트 요청 처리
+app.options('*', cors(corsOptions));  // 모든 경로에 대해 OPTIONS 요청 허용
 
 const io = socketIo(server, {
   cors: {

@@ -8,6 +8,9 @@ const socketIo = require("socket.io");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
+console.log("NODE_ENV index2:", process.env.NODE_ENV);
+console.log("MONGO_URI:", process.env.MONGO_URI);
+
 const jwt = require("jsonwebtoken"); // JWT 패키지 로드
 
 const server = http.createServer(app);

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "set NODE_ENV=development && nodemon src/index.js",
-    "start": "set NODE_ENV=production && nodemon src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index2.js",
+    "start": "cross-env NODE_ENV=production nodemon index.js",
     "prettier:check": "prettier --check '**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
     "prettier:fix": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -41,6 +41,7 @@
     "winston": "^3.14.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "prettier": "^3.3.3"
   }
 }
