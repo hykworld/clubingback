@@ -42,11 +42,7 @@ const Reply = ({ postType, postId }) => {
   } = useQuery({
     queryKey: ["replies", postType, postId],
     queryFn: async () => {
-<<<<<<< HEAD
       const response = await axiosInstance.get(`http://localhost:4000/replies/board/${postId}`);
-=======
-      const response = await axiosInstance.get(`http://3.133.122.248:4000/replies/board/${postId}`);
->>>>>>> 1e99f21 (테스트)
       return response.data.replies; // replies 배열만 반환
     },
     retry: 3,
@@ -55,11 +51,7 @@ const Reply = ({ postType, postId }) => {
   // 댓글/대댓글 등록
   const mutation = useMutation({
     mutationFn: (newComment) => {
-<<<<<<< HEAD
       return axiosInstance.post(`http://localhost:4000/replies/board/add/${newComment.postId}`, newComment);
-=======
-      return axiosInstance.post(`http://3.133.122.248:4000/replies/board/add/${newComment.postId}`, newComment);
->>>>>>> 1e99f21 (테스트)
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["replies", postType, postId]);
@@ -75,11 +67,7 @@ const Reply = ({ postType, postId }) => {
   // 댓글 삭제 Mutation
   const deleteMutation = useMutation({
     mutationFn: ({ replyId, writer }) => {
-<<<<<<< HEAD
       return axiosInstance.delete(`http://localhost:4000/replies/board/delete/${replyId}`, {
-=======
-      return axiosInstance.delete(`http://3.133.122.248:4000/replies/board/delete/${replyId}`, {
->>>>>>> 1e99f21 (테스트)
         data: { writer }, // 삭제 요청 시 삭제하는 사용자의 정보를 함께 보냄
       });
     },
@@ -95,11 +83,7 @@ const Reply = ({ postType, postId }) => {
   // 댓글 수정 Mutation
   const editMutation = useMutation({
     mutationFn: ({ replyId, writer, comment }) => {
-<<<<<<< HEAD
       return axiosInstance.put(`http://localhost:4000/replies/board/edit/${replyId}`, {
-=======
-      return axiosInstance.put(`http://3.133.122.248:4000/replies/board/edit/${replyId}`, {
->>>>>>> 1e99f21 (테스트)
         writer,
         comment,
       });

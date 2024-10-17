@@ -103,11 +103,7 @@ const Main = (wishHeart) => {
       handleSnackbarClick();
     } else {
       axiosInstance
-<<<<<<< HEAD
         .post(`http://localhost:4000/clubs/cencellMember/${clubNumber}`)
-=======
-        .post(`http://3.133.122.248:4000/clubs/cencellMember/${clubNumber}`)
->>>>>>> 1e99f21 (테스트)
         .then((response) => {
           // 모임 가입 성공 후 메시지 DB에 저장
           const messages = [
@@ -205,11 +201,7 @@ const Main = (wishHeart) => {
 
   //미팅 지우기
   const deleteMeeting = async (meetingNumber) => {
-<<<<<<< HEAD
     await fetch(`http://localhost:4000/meetings/delete/` + meetingNumber);
-=======
-    await fetch(`http://3.133.122.248:4000/meetings/delete/` + meetingNumber);
->>>>>>> 1e99f21 (테스트)
     setSnackbarMessage("정기모임이 삭제되었습니다.");
     handleSnackbarClick();
   };
@@ -217,11 +209,7 @@ const Main = (wishHeart) => {
 
   //클럽read할 때 내용들 불러오기 -> react-Query로!
   const getReadClub = async () => {
-<<<<<<< HEAD
     const response = await fetch(`http://localhost:4000/clubs/read2/${clubNumber}`);
-=======
-    const response = await fetch(`http://3.133.122.248:4000/clubs/read2/${clubNumber}`);
->>>>>>> 1e99f21 (테스트)
     const data = await response.json();
 
     await dispatch(fetchCategoryClubList(data.mainCategory));
@@ -259,11 +247,7 @@ const Main = (wishHeart) => {
   //모임삭제 시 이동 핸들러
   const handleDelete2 = async () => {
     try {
-<<<<<<< HEAD
       await axiosInstance.delete(`http://localhost:4000/clubs/delete/${clubNumber}`);
-=======
-      await axiosInstance.delete(`http://3.133.122.248:4000/clubs/delete/${clubNumber}`);
->>>>>>> 1e99f21 (테스트)
       // 삭제 후 원하는 페이지로 이동
       navigate(`/clubList`, { state: { snackbarMessage: "모임 삭제가 완료되었습니다." } });
     } catch (error) {
@@ -283,11 +267,7 @@ const Main = (wishHeart) => {
       axiosInstance
         .post(`/meetings/join/${meetingId}`)
         .then((response) => {
-<<<<<<< HEAD
           axiosInstance.get(`http://localhost:4000/meetings/${clubNumber}`).then((response) => {
-=======
-          axiosInstance.get(`http://3.133.122.248:4000/meetings/${clubNumber}`).then((response) => {
->>>>>>> 1e99f21 (테스트)
             let copy = [];
             for (let i = 0; i < response.data.length; i++) {
               if (response.data[i].joinMember.includes(user.userData.user.email)) {
@@ -316,11 +296,7 @@ const Main = (wishHeart) => {
   };
 
   useEffect(() => {
-<<<<<<< HEAD
     axiosInstance.get(`http://localhost:4000/meetings/${clubNumber}`).then((response) => {
-=======
-    axiosInstance.get(`http://3.133.122.248:4000/meetings/${clubNumber}`).then((response) => {
->>>>>>> 1e99f21 (테스트)
       let copy = [];
       for (let i = 0; i < response.data.length; i++) {
         if (response.data[i].joinMember.includes(user.userData.user.email)) {
@@ -439,11 +415,7 @@ const Main = (wishHeart) => {
             }}
           >
             <img
-<<<<<<< HEAD
               src={`http://localhost:4000/` + readClub?.img} // 이미지 경로
-=======
-              src={`http://3.133.122.248:4000/` + readClub?.img} // 이미지 경로
->>>>>>> 1e99f21 (테스트)
               alt="Example"
               style={{
                 width: "100%",
@@ -645,11 +617,7 @@ const Main = (wishHeart) => {
                         }}
                       >
                         <img
-<<<<<<< HEAD
                           src={`http://localhost:4000/` + readClub?.meeting[i]?.img} // 이미지 경로
-=======
-                          src={`http://3.133.122.248:4000/` + readClub?.meeting[i]?.img} // 이미지 경로
->>>>>>> 1e99f21 (테스트)
                           alt="Example222"
                           style={{
                             width: "100%",
@@ -979,8 +947,4 @@ const Main = (wishHeart) => {
   );
 };
 
-<<<<<<< HEAD
 export default Main;
-=======
-export default Main;
->>>>>>> 1e99f21 (테스트)

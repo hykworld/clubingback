@@ -3,11 +3,7 @@ import axiosInstance from "../utils/axios";
 // 회원 여부 확인 API 호출
 export const checkMembership = async (clubNumber, author) => {
   try {
-<<<<<<< HEAD
     const response = await axiosInstance.get("http://localhost:4000/clubs/boards/membership", {
-=======
-    const response = await axiosInstance.get("http://3.133.122.248:4000/clubs/boards/membership", {
->>>>>>> 1e99f21 (테스트)
       params: { clubNumber, email: author },
     });
     return response.data.isMember;
@@ -20,11 +16,7 @@ export const checkMembership = async (clubNumber, author) => {
 // 게시글 저장 API 호출
 export const savePost = async (data) => {
   try {
-<<<<<<< HEAD
     await axiosInstance.post("http://localhost:4000/clubs/boards/posts", data);
-=======
-    await axiosInstance.post("http://3.133.122.248:4000/clubs/boards/posts", data);
->>>>>>> 1e99f21 (테스트)
   } catch (error) {
     console.error("게시글 저장 오류:", error);
     throw error;
@@ -34,11 +26,7 @@ export const savePost = async (data) => {
 // 투표 저장 API 호출
 export const saveVote = async (data) => {
   try {
-<<<<<<< HEAD
     await axiosInstance.post("http://localhost:4000/clubs/boards/votes", data);
-=======
-    await axiosInstance.post("http://3.133.122.248:4000/clubs/boards/votes", data);
->>>>>>> 1e99f21 (테스트)
   } catch (error) {
     console.error("투표 저장 오류:", error);
     throw error;
@@ -48,11 +36,7 @@ export const saveVote = async (data) => {
 // 게시물 목록을 가져오는 API 호출 (페이징 처리 전 )
 // export const fetchPosts = async (clubNumber, page = 1) => {
 //   try {
-<<<<<<< HEAD
 //     const response = await axiosInstance.get('http://localhost:4000/clubs/boards/all', {
-=======
-//     const response = await axiosInstance.get('http://3.133.122.248:4000/clubs/boards/all', {
->>>>>>> 1e99f21 (테스트)
 //       params: { clubNumber, page, limit: 12 } // 페이지와 limit을 쿼리로 전달
 //     });
 //     return response.data;
@@ -65,11 +49,7 @@ export const saveVote = async (data) => {
 // 게시물 목록을 가져오는 API 호출 (페이징 처리 후 )
 export const fetchPosts = async (clubNumber, page = 1, limit = 12, category = "") => {
   try {
-<<<<<<< HEAD
     const response = await axiosInstance.get("http://localhost:4000/clubs/boards/all", {
-=======
-    const response = await axiosInstance.get("http://3.133.122.248:4000/clubs/boards/all", {
->>>>>>> 1e99f21 (테스트)
       params: { clubNumber, page, limit, category },
     });
 
@@ -89,11 +69,7 @@ export const fetchPosts = async (clubNumber, page = 1, limit = 12, category = ""
 // 게시물 조회
 export const fetchPost = async (postId) => {
   try {
-<<<<<<< HEAD
     const response = await axiosInstance.get(`http://localhost:4000/clubs/boards/posts/${postId}`);
-=======
-    const response = await axiosInstance.get(`http://3.133.122.248:4000/clubs/boards/posts/${postId}`);
->>>>>>> 1e99f21 (테스트)
     return response.data;
   } catch (error) {
     console.error("게시물 조회 오류:", error);
@@ -104,11 +80,7 @@ export const fetchPost = async (postId) => {
 // 게시물 삭제
 export const deletePost = async (postId) => {
   try {
-<<<<<<< HEAD
     await axiosInstance.delete(`http://localhost:4000/clubs/boards/posts/${postId}`);
-=======
-    await axiosInstance.delete(`http://3.133.122.248:4000/clubs/boards/posts/${postId}`);
->>>>>>> 1e99f21 (테스트)
   } catch (error) {
     console.error("게시물 삭제 오류:", error);
     throw error;
@@ -118,11 +90,7 @@ export const deletePost = async (postId) => {
 // 게시물 업데이트
 export const updatePost = async (postId, postData) => {
   try {
-<<<<<<< HEAD
     await axiosInstance.put(`http://localhost:4000/clubs/boards/posts/${postId}`, postData);
-=======
-    await axiosInstance.put(`http://3.133.122.248:4000/clubs/boards/posts/${postId}`, postData);
->>>>>>> 1e99f21 (테스트)
   } catch (error) {
     console.error("게시물 업데이트 오류:", error);
     throw error;

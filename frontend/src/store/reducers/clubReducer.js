@@ -3,51 +3,31 @@ import axiosInstance from "../../utils/axios";
 
 // AsyncThunk 정의
 const fetchClubList = createAsyncThunk("clubList/fetchClubList", async () => {
-<<<<<<< HEAD
   const response = await fetch("http://localhost:4000/clubs");
-=======
-  const response = await fetch("http://3.133.122.248:4000/clubs");
->>>>>>> 1e99f21 (테스트)
   const data = await response.json();
   return data;
 });
 
 const fetchGetClub = createAsyncThunk("clubList/fetchGetClub", async (id) => {
-<<<<<<< HEAD
   const response = await fetch(`http://localhost:4000/clubs/read2/${id}`);
-=======
-  const response = await fetch(`http://3.133.122.248:4000/clubs/read2/${id}`);
->>>>>>> 1e99f21 (테스트)
   const data = await response.json();
   return data;
 });
 
 const fetchGetClubMember = createAsyncThunk("clubs/fetchGetClubMember", async (clubMembers) => {
-<<<<<<< HEAD
   const response = await axiosInstance.post(`http://localhost:4000/clubs/membersInfo`, clubMembers);
-=======
-  const response = await axiosInstance.post(`http://3.133.122.248:4000/clubs/membersInfo`, clubMembers);
->>>>>>> 1e99f21 (테스트)
   const data = await response.data;
   return data;
 });
 
 const fetchMeetingList = createAsyncThunk("meetingList/fetchMeetingList", async (clubNumber) => {
-<<<<<<< HEAD
   const response = await fetch(`http://localhost:4000/meetings/${clubNumber}`);
-=======
-  const response = await fetch(`http://3.133.122.248:4000/meetings/${clubNumber}`);
->>>>>>> 1e99f21 (테스트)
   const data = await response.json();
   return data;
 });
 
 const fetchCategoryClubList = createAsyncThunk("CategoryClubList/fetchCategoryClubList", async (Category) => {
-<<<<<<< HEAD
   const response = await fetch(`http://localhost:4000/clubs/category/${Category}`);
-=======
-  const response = await fetch(`http://3.133.122.248:4000/clubs/category/${Category}`);
->>>>>>> 1e99f21 (테스트)
   const data = await response.json();
   return data;
 });

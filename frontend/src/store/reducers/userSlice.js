@@ -6,10 +6,7 @@ import {
   logoutUser,
   myPage,
   updateUser,
-<<<<<<< HEAD
   kakaoLoginUser,
-=======
->>>>>>> 1e99f21 (테스트)
 } from "../actions/userActions";
 import { Snackbar, Alert } from "@mui/material";
 
@@ -120,7 +117,6 @@ const userSlice = createSlice({
     };
     })
 
-<<<<<<< HEAD
     // 카카오 로그인 처리
     .addCase(kakaoLoginUser.pending, (state) => {
       state.isLoading = true; // 로그인 요청 시작 시 로딩 상태 설정
@@ -140,8 +136,6 @@ const userSlice = createSlice({
       };
     })
 
-=======
->>>>>>> 1e99f21 (테스트)
     // 인증
     .addCase(authUser.pending, (state) => {
       state.isLoading = true;

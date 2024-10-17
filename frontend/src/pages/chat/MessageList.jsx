@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import CloseIcon from "@mui/icons-material/Close";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axiosInstance from "../../utils/axios";
 
 // 시간 형식 변환 함수
 const formatTime = (timestamp) => {
@@ -33,11 +34,7 @@ const groupMessagesByDate = (messages) => {
 // 사용자 정보 가져오기
 const fetchUserById = async (userId) => {
   try {
-<<<<<<< HEAD
-    const response = await axios.get(`http://localhost:4000/users/${userId}`);
-=======
-    const response = await axios.get(`http://3.133.122.248:4000/users/${userId}`);
->>>>>>> 1e99f21 (테스트)
+    const response = await axiosInstance.get(`/users/${userId}`);
     return response.data;
   } catch (error) {
     console.error("Error fetching user data:", error);
@@ -162,11 +159,7 @@ const MessageList = ({ messages, userId, handleScroll, isAtBottom, newMessageRec
       sx={{
         flexGrow: 1,
         overflowY: "auto",
-<<<<<<< HEAD
         backgroundColor: "#D5D3CB",
-=======
-        backgroundColor: "#a67153",
->>>>>>> 1e99f21 (테스트)
         padding: 2,
         position: "relative",
       }}
@@ -184,13 +177,8 @@ const MessageList = ({ messages, userId, handleScroll, isAtBottom, newMessageRec
           >
             <Box
               sx={{
-<<<<<<< HEAD
                 backgroundColor: "#212121",
                 opacity: 0.4,
-=======
-                backgroundColor: "#40190b",
-                opacity: 0.5,
->>>>>>> 1e99f21 (테스트)
                 borderRadius: "15px",
                 height: 28,
                 display: "flex",
@@ -236,11 +224,7 @@ const MessageList = ({ messages, userId, handleScroll, isAtBottom, newMessageRec
                         color: "#000000",
                       }}
                     >
-<<<<<<< HEAD
                       {userProfiles[msg.sender]?.nickName || "Unknown"}
-=======
-                      {userProfiles[msg.sender]?.name || "Unknown"}
->>>>>>> 1e99f21 (테스트)
                     </Typography>
                   </Box>
                 )}
@@ -257,17 +241,10 @@ const MessageList = ({ messages, userId, handleScroll, isAtBottom, newMessageRec
                       display: "flex",
                       flexDirection: "column",
                       flex: 1, // 채팅 내용이 가능한 한 많은 공간을 차지하도록 설정
-<<<<<<< HEAD
                       backgroundColor: msg.sender === userId ? "rgba(186, 153, 135, 0.8)" : "#F2F2F2",
                       color: msg.sender === userId ? "#202020" : "#202020",
                       borderRadius: "10px",
                       padding: "6px 9px 6px 9px", // 상단, 우측, 하단, 좌측
-=======
-                      backgroundColor: msg.sender === userId ? "#dbc7b5" : "#f5f5f5",
-                      color: msg.sender === userId ? "#000000" : "#000000",
-                      borderRadius: "10px",
-                      padding: "8px 10px 0px 8px", // 상단, 우측, 하단, 좌측
->>>>>>> 1e99f21 (테스트)
                       marginLeft: msg.sender === userId ? "0px" : "22px",
                     }}
                   >
@@ -279,7 +256,6 @@ const MessageList = ({ messages, userId, handleScroll, isAtBottom, newMessageRec
                       }}
                     >
                       {isUrl(msg.content) ? (
-<<<<<<< HEAD
                         <a
                           href={msg.content.startsWith("http") ? msg.content : `http://${msg.content}`}
                           target="_blank"
@@ -291,9 +267,6 @@ const MessageList = ({ messages, userId, handleScroll, isAtBottom, newMessageRec
                             textDecorationThickness: "1px", // 밑줄 두께 조정 (선택 사항)
                           }}
                         >
-=======
-                        <a href={msg.content.startsWith("http") ? msg.content : `http://${msg.content}`} target="_blank" rel="noopener noreferrer" style={{ color: "#1976d2" }}>
->>>>>>> 1e99f21 (테스트)
                           {msg.content}
                         </a>
                       ) : (

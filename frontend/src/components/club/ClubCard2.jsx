@@ -54,11 +54,7 @@ const ClubCard2 = ({ clubList }) => {
                 <Grid item xs={5}>
                   <Box sx={{ display: "flexed", position: "relative" }}>
                     <img
-<<<<<<< HEAD
                       src={`http://localhost:4000/` + club.img}
-=======
-                      src={`http://3.133.122.248:4000/` + club.img}
->>>>>>> 1e99f21 (테스트)
                       alt={club.title}
                       style={{
                         width: "190px",

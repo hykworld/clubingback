@@ -139,11 +139,7 @@ function Header() {
     setSearchTerm(term);
     if (term) {
       try {
-<<<<<<< HEAD
         const response = await axios.get(`http://localhost:4000/clubs/search/test?title=${term}`);
-=======
-        const response = await axios.get(`http://3.133.122.248:4000/clubs/search/test?title=${term}`);
->>>>>>> 1e99f21 (테스트)
         setSearchResults(response.data);
       } catch (error) {
         console.error("검색 요청 실패", error);

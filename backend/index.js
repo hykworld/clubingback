@@ -98,6 +98,7 @@ const kakao = require("./src/routes/kakao");
 app.use("/kakao", kakao);
 const startServer = async () => {
   try {
+    console.log("MongoDB 연결 시도 중...");  // 연결 시도 로그 추가
     await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
     console.log("몽고디비 연결 완료");
     server.listen(process.env.PORT, () => {

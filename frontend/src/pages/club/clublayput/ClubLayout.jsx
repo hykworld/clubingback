@@ -40,11 +40,7 @@ function ClubLayout() {
       navigate("/login");
     } else {
       axiosInstance
-<<<<<<< HEAD
         .post(`http://localhost:4000/clubs/addMember/${clubNumber}`)
-=======
-        .post(`http://3.133.122.248:4000/clubs/addMember/${clubNumber}`)
->>>>>>> 1e99f21 (테스트)
         .then((response) => {
           alert("모임 가입성공");
 
@@ -63,11 +59,7 @@ function ClubLayout() {
               sender: user.email, // 클럽 이름
               content: `${user.email}에서 모임에 가입했습니다.`,
               title: `${user.email}님 모임에 가입`,
-<<<<<<< HEAD
             },
-=======
-            }
->>>>>>> 1e99f21 (테스트)
 
             // 필요에 따라 추가 메시지 객체를 배열에 추가
           ];

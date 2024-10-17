@@ -112,11 +112,7 @@ const MeetingListByCategory = ({ passCategory }) => {
                         }}
                       >
                         <img
-<<<<<<< HEAD
                           src={`http://localhost:4000/` + meeting.img} // 이미지 경로
-=======
-                          src={`http://3.133.122.248:4000/` + meeting.img} // 이미지 경로
->>>>>>> 1e99f21 (테스트)
                           alt="Example222"
                           style={{
                             width: "100%",
@@ -227,11 +223,7 @@ const MeetingListByCategory = ({ passCategory }) => {
                         }}
                       >
                         <img
-<<<<<<< HEAD
                           src={`http://localhost:4000/` + meeting.img} // 이미지 경로
-=======
-                          src={`http://3.133.122.248:4000/` + meeting.img} // 이미지 경로
->>>>>>> 1e99f21 (테스트)
                           alt="Example222"
                           style={{
                             width: "100%",

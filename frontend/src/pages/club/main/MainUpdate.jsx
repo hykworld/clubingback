@@ -46,11 +46,7 @@ const MainUpdate = () => {
 
   const [noUpdatePreview, setNoUpdatePreview] = useState("");
   const getReadClub = async () => {
-<<<<<<< HEAD
     const response = await fetch(`http://localhost:4000/clubs/read/${clubNumber}`);
-=======
-    const response = await fetch(`http://3.133.122.248:4000/clubs/read/${clubNumber}`);
->>>>>>> 1e99f21 (테스트)
     const data = await response.json();
     setNoUpdatePreview(data.img);
     setValue("img", data.img);
@@ -171,17 +167,9 @@ const MainUpdate = () => {
       try {
         const response = await axiosInstance.post(`/clubs/update2/${clubNumber}`, data);
         navigate(`/clubs/main?clubNumber=${clubNumber}`, { state: { snackbarMessage: "모임 수정을 완료했습니다." } });
-<<<<<<< HEAD
       } catch (err) {
         console.error(err);
         navigate(`/clubs/main?clubNumber=${clubNumber}`, { state: { snackbarMessage: "모임 수정을 실패했습니다." } });
-=======
-
-      } catch (err) {
-        console.error(err);
-        navigate(`/clubs/main?clubNumber=${clubNumber}`, { state: { snackbarMessage: "모임 수정을 실패했습니다." } });
-
->>>>>>> 1e99f21 (테스트)
       }
     }
   };
@@ -258,11 +246,7 @@ const MainUpdate = () => {
                   justifyContent: "center",
                 }}
               >
-<<<<<<< HEAD
                 <img src={`http://localhost:4000/` + noUpdatePreview} alt="미리보기" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-=======
-                <img src={`http://3.133.122.248:4000/` + noUpdatePreview} alt="미리보기" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
->>>>>>> 1e99f21 (테스트)
               </Box>
             )}
             {preview && (

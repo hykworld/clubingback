@@ -2,15 +2,7 @@ import React, { useRef, useState } from "react";
 import { Grid, TextField, Button, Box, IconButton, InputAdornment } from "@mui/material";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import Picker from "@emoji-mart/react";
-<<<<<<< HEAD
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
-=======
-import SendIcon from "@mui/icons-material/Send";
-import SendRoundedIcon from "@mui/icons-material/SendRounded";
-import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
-import TelegramIcon from "@mui/icons-material/Telegram";
-import NearMeIcon from "@mui/icons-material/NearMe";
->>>>>>> 1e99f21 (테스트)
 
 const MessageInput = ({ message, setMessage, handleSendMessage, handleKeyPress }) => {
   const [showPicker, setShowPicker] = useState(false);
@@ -51,17 +43,12 @@ const MessageInput = ({ message, setMessage, handleSendMessage, handleKeyPress }
             startAdornment: (
               <InputAdornment position="start">
                 <IconButton color="primary" onClick={handleTogglePicker}>
-<<<<<<< HEAD
                   <EmojiEmotionsIcon sx={{ color: "#dbc7b5", fontSize: 32 }} />
-=======
-                  <EmojiEmotionsIcon sx={{ color: "grey", fontSize: 32 }} />
->>>>>>> 1e99f21 (테스트)
                 </IconButton>
               </InputAdornment>
             ),
           }}
           sx={{
-<<<<<<< HEAD
             backgroundColor: "white", // 항상 바탕색은 흰색 유지
             fontSize: "0.9rem", // 글씨 크기 약간 증가
             "& .MuiOutlinedInput-root": {
@@ -72,13 +59,6 @@ const MessageInput = ({ message, setMessage, handleSendMessage, handleKeyPress }
           }}
         />
 
-=======
-            backgroundColor: "white",
-
-            fontSize: "0.9rem", // 글씨 크기 약간 증가
-          }}
-        />
->>>>>>> 1e99f21 (테스트)
         {showPicker && (
           <Box sx={{ position: "absolute", bottom: 60 }}>
             <Picker onEmojiSelect={handleEmojiClick} />
@@ -94,21 +74,13 @@ const MessageInput = ({ message, setMessage, handleSendMessage, handleKeyPress }
           fullWidth
           onClick={handleSendMessage}
           sx={{
-<<<<<<< HEAD
             backgroundColor: "#dbc7b5",
-=======
-            backgroundColor: "#7c7c7c",
->>>>>>> 1e99f21 (테스트)
             width: 57,
             height: 57,
             aspectRatio: "0",
             margin: 0,
             "&:hover": {
-<<<<<<< HEAD
               backgroundColor: "#a6836f", // 호버 시 버튼 배경 색상
-=======
-              backgroundColor: "#000000", // 호버 시 버튼 배경 색상
->>>>>>> 1e99f21 (테스트)
               "& .MuiSvgIcon-root": {
                 color: "#ffffff", // 호버 시 아이콘 색상
               },

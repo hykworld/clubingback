@@ -138,11 +138,7 @@ const Gallery = () => {
   // 모달을 열고 이미지를 표시하는 핸들러
   const handleOpen = async (id, index) => {
     try {
-<<<<<<< HEAD
       const response = await axios.get(`http://localhost:4000/clubs/gallery/${clubNumber}/images/${id}`);
-=======
-      const response = await axios.get(`http://3.133.122.248:4000/clubs/gallery/${clubNumber}/images/${id}`);
->>>>>>> 1e99f21 (테스트)
       const gallery = response.data;
 
       setSelectedIndex(index);

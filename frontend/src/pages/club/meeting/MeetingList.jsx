@@ -9,10 +9,6 @@ import MeetingListByCategory from "./MeetingListByCategory";
 import MeetingListAsUser from "./MeetingListAsUser";
 
 const MeetingList = () => {
-<<<<<<< HEAD
-=======
- 
->>>>>>> 1e99f21 (테스트)
   const [nowTime, setNowTime] = useState([]);
   const [selectedTab, setSelectedTab] = useState(0); // 선택된 탭의 상태
   const [category, setCategory] = useState([...Object.keys(clubCategories)]);
@@ -72,11 +68,7 @@ const MeetingList = () => {
 
   // 미팅 리스트 가져오기
   const getMeetingList = async () => {
-<<<<<<< HEAD
     const response = await fetch(`http://localhost:4000/meetings?nowDate=${nowDate}`);
-=======
-    const response = await fetch(`http://3.133.122.248:4000/meetings?nowDate=${nowDate}`);
->>>>>>> 1e99f21 (테스트)
     const data = await response.json();
     return data;
   };
@@ -233,11 +225,7 @@ const MeetingList = () => {
                         }}
                       >
                         <img
-<<<<<<< HEAD
                           src={`http://localhost:4000/` + meeting.img} // 이미지 경로
-=======
-                          src={`http://3.133.122.248:4000/` + meeting.img} // 이미지 경로
->>>>>>> 1e99f21 (테스트)
                           alt="Example222"
                           style={{
                             width: "100%",
@@ -345,11 +333,7 @@ const MeetingList = () => {
                         }}
                       >
                         <img
-<<<<<<< HEAD
                           src={`http://localhost:4000/` + meeting.img} // 이미지 경로
-=======
-                          src={`http://3.133.122.248:4000/` + meeting.img} // 이미지 경로
->>>>>>> 1e99f21 (테스트)
                           alt="Example222"
                           style={{
                             width: "100%",

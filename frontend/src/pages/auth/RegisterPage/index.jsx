@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import React, { useState, useEffect, useRef} from 'react';
 import { useForm, Controller,  } from 'react-hook-form';
 import { useNavigate, useLocation } from 'react-router-dom'; // 추가: useNavigate 훅을 가져옵니다.
-=======
-import React, { useState, useEffect, useRef } from 'react';
-import { useForm, Controller } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom'; // 추가: useNavigate 훅을 가져옵니다.
->>>>>>> 1e99f21 (테스트)
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../../../store/actions/userActions'
 import HomeSearch from './address/HomeSearch';
@@ -52,10 +46,7 @@ const RegisterPage = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-<<<<<<< HEAD
   const location = useLocation();
-=======
->>>>>>> 1e99f21 (테스트)
 
   // 회원가입 폼 제출 시 실행되는 함수
   const onSubmit = (data) => {
@@ -90,7 +81,6 @@ const RegisterPage = () => {
       return;
     }
 
-<<<<<<< HEAD
     if (!sido || !sigoon || !dong) {
       // 필수 입력이 비어 있을 때
       setSnackbarMessage('집 주소를 설정해 주세요.');
@@ -98,15 +88,6 @@ const RegisterPage = () => {
       setSnackbarOpen(true);
       return;
     }
-=======
-    // if (!sido || !sigoon || !dong) {
-    //   // 필수 입력이 비어 있을 때
-    //   setSnackbarMessage('집 주소를 설정해 주세요.');
-    //   setSnackbarSeverity('error');
-    //   setSnackbarOpen(true);
-    //   return;
-    // }
->>>>>>> 1e99f21 (테스트)
 
     if (selectedJobs.length === 0) {
       // 카테고리 배열이 비어 있을 때
@@ -116,7 +97,6 @@ const RegisterPage = () => {
       return;
     }
 
-<<<<<<< HEAD
      // main 카테고리 개수 확인
      const mainCategories = category.filter(cat => cat.main);
      if (mainCategories.length < 3) {
@@ -125,15 +105,6 @@ const RegisterPage = () => {
        setSnackbarOpen(true);
        return;
      }
-=======
-    if (category.length === 0) {
-      // 카테고리 배열이 비어 있을 때
-      setSnackbarMessage('카테고리를 설정해 주세요');
-      setSnackbarSeverity('error');
-      setSnackbarOpen(true);
-      return;
-    }
->>>>>>> 1e99f21 (테스트)
 
     if (!terms) {
       // 이용약관 동의가 없을 때
@@ -151,11 +122,8 @@ const RegisterPage = () => {
       return;
     }
 
-<<<<<<< HEAD
      
 
-=======
->>>>>>> 1e99f21 (테스트)
      const categoryObject = category.reduce((acc, cat) => {
       if (cat.main && Array.isArray(cat.sub)) {
         acc.push({
@@ -203,12 +171,8 @@ const RegisterPage = () => {
         originalImage: 'https://via.placeholder.com/600x400?text=no+user+image',
         thumbnailImage: 'https://via.placeholder.com/600x400?text=no+user+image',
         introduction: ''
-<<<<<<< HEAD
       },
       registrationMethod: 0 // 회원가입 경로 추가, 기본값은 자체 회원가입 (0)
-=======
-      }
->>>>>>> 1e99f21 (테스트)
     }
    
   
@@ -239,10 +203,7 @@ const RegisterPage = () => {
     reset(); // 폼 초기화
   };
   
-<<<<<<< HEAD
 
-=======
->>>>>>> 1e99f21 (테스트)
   //api
   const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -605,22 +566,16 @@ const [verifyError, setVerifyError] = useState('');
         setSnackbarMessage(response.data.message);
         setSnackbarSeverity('success'); // 성공 메시지
         setSnackbarOpen(true);
-<<<<<<< HEAD
 
         // 닉네임이 유효한 경우 상태 업데이트
-=======
->>>>>>> 1e99f21 (테스트)
         setIsNickNameChecked(true);  // 닉네임 확인 후 버튼 상태 변경
         setIsNickNameReset(true); // 수정 버튼 상태로 변경
       } catch (err) {
         setSnackbarMessage(err.response ? err.response.data.message : '서버 오류');
         setSnackbarSeverity('error'); // 오류 메시지
         setSnackbarOpen(true);
-<<<<<<< HEAD
 
          // 중복 검사가 실패한 경우 상태 유지
-=======
->>>>>>> 1e99f21 (테스트)
         setIsNickNameChecked(false);  // 오류 발생 시 버튼 상태 유지
         setIsNickNameReset(false);
       }
@@ -704,7 +659,6 @@ const [workplaceSido, setWorkplaceSido] = useState('');  // 도(시도)
 const [workplaceSigoon, setWorkplaceSigoon] = useState('');  // 시군구
 const [workplaceDong, setWorkplaceDong] = useState('');  // 읍면동
 
-<<<<<<< HEAD
 const [email, setEmail] = useState('');
 
 useEffect(() => {
@@ -715,8 +669,6 @@ useEffect(() => {
     }
 }, [location]);
 
-=======
->>>>>>> 1e99f21 (테스트)
   return (
     <Box 
       sx={{ 
@@ -813,10 +765,6 @@ useEffect(() => {
             메일수정
           </CustomButton2 >
           <CustomButton  
-<<<<<<< HEAD
-=======
-          variant="contained"
->>>>>>> 1e99f21 (테스트)
           className="buttonSub2"
           sx={{ height: '25px' }}
             onClick={handleSendAuthEmail}>
@@ -1271,7 +1219,6 @@ useEffect(() => {
         setWorkplaceSigoon={(sigoon) => setWorkplace(prev => ({ ...prev, w_sigoon: sigoon }))} 
         setWorkplaceDong={(dong) => setWorkplace(prev => ({ ...prev, w_dong: dong }))} />             
 
-<<<<<<< HEAD
 {/*관심지역 */}
 <Box sx={{ display: 'flex', alignItems: 'center', mt: 2  }}>
    <Typography variant="body2" sx={{ fontWeight: 'bold', color: 'text.secondary' }}>
@@ -1289,8 +1236,6 @@ useEffect(() => {
 
 
 {/*테스트 
-=======
->>>>>>> 1e99f21 (테스트)
 <Box sx={{ display: 'flex', alignItems: 'center', mt: 2  }}>
     <Typography variant="body2" sx={{ ml: 2, color: 'text.secondary' }}>
     도: {workplaceSido}
@@ -1306,26 +1251,8 @@ useEffect(() => {
         setWorkplaceSigoon={setWorkplaceSigoon}
         setWorkplaceDong={setWorkplaceDong}
     />
-<<<<<<< HEAD
 </Box> */}
 
-=======
-</Box>
-{/*관심지역 */}
-<Box sx={{ display: 'flex', alignItems: 'center', mt: 2  }}>
-   <Typography variant="body2" sx={{ fontWeight: 'bold', color: 'text.secondary' }}>
-   관심지역
-    </Typography>
-    <Typography variant="body2" sx={{ ml: 2, color: 'text.secondary' }}>
-    (*읍면동 중 하나를 입력해 주세요)
-    </Typography>
-  </Box>
-      <InterestSearch 
-        setInterestSido={(sido) => setInterestLocation(prev => ({ ...prev, i_sido: sido }))} 
-        setInterestSigoon={(sigoon) => setInterestLocation(prev => ({ ...prev, i_sigoon: sigoon }))} 
-        setInterestDong={(dong) => setInterestLocation(prev => ({ ...prev, i_dong: dong }))} />
-</Box>     
->>>>>>> 1e99f21 (테스트)
 {/*직종 */}
 <Box>
       {/* 직종 선택 버튼 */}

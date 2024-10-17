@@ -11,10 +11,7 @@ import ProtectedRoutes from "./components/common/ProtectedRoutes";
 import NotAuthRoutes from "./components/common/NotAuthRoutes";
 import LoginPage from "./pages/auth/LoginPage";
 import RegisterPage from "./pages/auth/RegisterPage";
-<<<<<<< HEAD
 import SnsRegister from "./pages/auth/RegisterPage/SnsRegister";
-=======
->>>>>>> 1e99f21 (테스트)
 import { authUser } from "./store/actions/userActions";
 import "./App.css";
 import ClubCreate from "./pages/club/ClubCreate";
@@ -23,12 +20,9 @@ import Board from "./pages/club/board/Board";
 import Home from "./pages/home/Home"
 import Event from "./pages/event/Event";
 import RecommendedClubList from './pages/recommend/RecommendedClubList'
-<<<<<<< HEAD
 import KakaoCallback from "./pages/auth/LoginPage/KakaoCallback";
 import HeaderDisplay from "./pages/check/HeaderDisplay";
-=======
 
->>>>>>> 1e99f21 (테스트)
 
 function App() {
   const dispatch = useDispatch();
@@ -79,16 +73,12 @@ function App() {
         <Route element={<NotAuthRoutes isAuth={isAuth} />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-<<<<<<< HEAD
+
           <Route path="/snsregister" element={<SnsRegister />} />
           <Route path="/kakao/callback" element={<KakaoCallback />} />
         </Route>
-
         <Route path="/headers" element={<HeaderDisplay />} />
-=======
         </Route>
->>>>>>> 1e99f21 (테스트)
-      </Route>
     </Routes>
   );
 }
